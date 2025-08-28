@@ -6,6 +6,7 @@ pipeline {
     }
     stages {
         stage('Cleanup Workspace') {
+            agent { label 'MySlave1' }
             steps {
                 cleanWs()
             }
@@ -16,6 +17,7 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            agent { label 'MySlave1' }
             steps {
                 script {
                     sh 'docker build -t $DOCKER_IMAGE .'
@@ -23,6 +25,7 @@ pipeline {
             }
         }
         stage('Push to DockerHub') {
+            agent { label 'MySlave1' }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
