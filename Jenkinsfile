@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/telecom-churn-prediction.git'
+                git branch: 'main', url: 'https://github.com/sbrao-learning/telecom-churn-prediction.git'
             }
         }
         stage('Build Docker Image') {
