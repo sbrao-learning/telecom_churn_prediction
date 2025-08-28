@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y curl bash \
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 	
-RUN adduser --disbaled-password appuser
+RUN adduser --disabled-password appuser
 
 WORKDIR /app
 
