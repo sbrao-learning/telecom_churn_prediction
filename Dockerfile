@@ -1,4 +1,5 @@
-FROM python:3.10-slim   # Stick to Python 3.10 for sklearn compatibility
+# Stick to Python 3.10 for sklearn compatibility
+FROM python:3.10-slim   
 
 RUN apt-get update && apt-get install -y curl bash \
     && rm -rf /var/lib/apt/lists/*
