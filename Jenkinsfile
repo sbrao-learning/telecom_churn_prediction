@@ -2,7 +2,7 @@
 pipeline {
     agent any    
     environment {
-        DOCKER_IMAGE = "shashi40410/telecom-churn-prediction"
+        DOCKER_IMAGE = "shashi40410/telecom_churn_prediction"
     }
     stages {
         stage('Cleanup Workspace') {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sbrao-learning/telecom-churn-prediction.git'
+                git branch: 'main', url: 'https://github.com/sbrao-learning/telecom_churn_prediction.git'
             }
         }
         stage('Build Docker Image') {
